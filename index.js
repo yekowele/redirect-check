@@ -4,6 +4,8 @@ const csv = require('csv-parser');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
 const path = require('path');
 
+const CSV_FILES_PATH = 'files';
+
 // Function to check the status code of a URL
 const checkUrlStatus = async (url) => {
     try {
@@ -24,7 +26,7 @@ const checkUrlsFromCsv = async (csvFilePath) => {
     const results = [];
 
     // Set the output file name
-    const outputFilePath = 'files/controlled/'+path.basename(csvFilePath, path.extname(csvFilePath)) + '_checked.csv';
+    const outputFilePath = CSV_FILES_PATH+'/controlled/'+path.basename(csvFilePath, path.extname(csvFilePath)) + '_checked.csv';
 
     // Create CSV writer
     const csvWriter = createCsvWriter({
@@ -77,5 +79,5 @@ const checkUrlsFromDirectory = (directoryPath) => {
     });
 };
 
-const directoryPath = 'files';
-checkUrlsFromDirectory(directoryPath);
+
+checkUrlsFromDirectory(CSV_FILES_PATH);
