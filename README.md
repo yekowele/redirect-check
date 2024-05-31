@@ -1,4 +1,4 @@
-HTTP Status Codes Check
+# HTTP Status Codes Check
 
 This script checks the status codes of the URLs in the given file and prints the results to the console & files directory
 
@@ -14,6 +14,8 @@ This script checks the status codes of the URLs in the given file and prints the
 - Node.js v20.x.x
 
 ## CSV Template
+
+Create CSV file with the following template in the ```files``` **directory**, and run the script.
 
 ```csv
 URL
